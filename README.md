@@ -1,24 +1,12 @@
-# 401-lab-05
-# LAB - 
+# LAB - 05
 
-## Project Name
+## Data Modeling
 
-### Author: Student/Group Name
+### Author: Jessica
 
 ### Links and Resources
 * [submission PR](https://github.com/401-advanced-javascript-jessica/401-lab-05/pull/3)
-* [travis](http://xyz.com)
-* [back-end](http://xyz.com) (when applicable)
-* [front-end](http://xyz.com) (when applicable)
-
-#### Documentation
-* [api docs](http://xyz.com) (API servers)
-* [jsdoc](http://xyz.com) (Server assignments)
-* [styleguide](http://xyz.com) (React assignments)
-
-### Modules
-#### `modulename.js`
-##### Exported Values and Methods
+* [travis](https://www.travis-ci.com/401-advanced-javascript-jessica/401-lab-05)
 
 ###### `foo(thing) -> string`
 Usage Notes or examples
@@ -31,17 +19,9 @@ Usage Notes or examples
 * `PORT` - Port Number
 * `MONGODB_URI` - URL to the running mongo instance/db
 
-#### Running the app
-* `npm start`
-* Endpoint: `/foo/bar/`
-  * Returns a JSON object with abc in it.
-* Endpoint: `/bing/zing/`
-  * Returns a JSON object with xyz in it.
   
 #### Tests
-* How do you run tests?
-* What assertions were made?
-* What assertions need to be / should be made?
+* Unit Tests: `npm test`
+* Lint Tests: `npm run lint`
 
-#### UML
-Link to an image of the UML for your application and response to events
+
