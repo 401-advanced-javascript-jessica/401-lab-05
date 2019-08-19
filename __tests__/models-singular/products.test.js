@@ -12,6 +12,13 @@ describe('Products Model (Singular)', () => {
         sku: 'T47S',
         size: 's'
     };
+    let newProduct2 = {
+        name: 'Green TShirt',
+        description: 'Green Cotton T Shirt',
+        quantity: 12,
+        sku: 'T49M',
+        size: 'm'
+    };
     // How will you handle both the happy path and edge cases in these tests?
 
     it('can create() a new product', () => {
@@ -36,6 +43,17 @@ describe('Products Model (Singular)', () => {
     });
 
     it('can get() all products', () => {
+
+        return products.create(newProduct)
+            .then( () => {
+                return products.create(newProduct2)
+            })
+            .then((savedProduct) => {
+                return products.get()
+            })
+            .then((foundProducts) => {
+                expect(foundProducts.count).toEqual(4);
+            })
 
     });
 
