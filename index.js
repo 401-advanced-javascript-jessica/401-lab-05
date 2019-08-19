@@ -15,19 +15,19 @@ mongoose.connect(MONGOOSE_URI, { useNewUrlParser: true });
 const categories = new Categories();
 
 const doDataStuff = async () => {
-    const sampleCategory = {
-        name: 'Shirts',
-        description: 'Things you wear on top'
-    };
+  const sampleCategory = {
+    name: 'Shirts',
+    description: 'Things you wear on top',
+  };
 
-    let newCategory = await categories.create(sampleCategory);
-    //console.log('Category Created', newCategory);
+  let newCategory = await categories.create(sampleCategory);
+  //console.log('Category Created', newCategory);
 
-    let oneCategory = await categories.get('5d5a1c39fe3d6c8e8042f265');
-   // console.log('One Category', oneCategory);
+  let oneCategory = await categories.get('5d5a1c39fe3d6c8e8042f265');
+  // console.log('One Category', oneCategory);
 
-    // Disconnect
-    mongoose.disconnect();
+  // Disconnect
+  mongoose.disconnect();
 
 };
 

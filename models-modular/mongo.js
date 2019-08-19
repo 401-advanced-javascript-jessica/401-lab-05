@@ -24,10 +24,10 @@ class Model {
     } else {
       // If 2, return it as an object like this:
       return  this.schema.find({})
-          .then((foundItems) => {
-            // { count: ##, results: [{}, {}] }
-            return { count: foundItems.length, results: foundItems}
-          })
+        .then((foundItems) => {
+          // { count: ##, results: [{}, {}] }
+          return { count: foundItems.length, results: foundItems};
+        });
     }
   }
 
