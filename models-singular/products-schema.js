@@ -26,22 +26,22 @@ const productSchema = mongoose.Schema({
     }
 });
 
-// Do we need to run any lifecycle hooks/middleware?
-productSchema.post('findOne', function(document){
-    console.log('--AFTER Product find one--');
-    // console.log({document});
-    // console.log({this});
-});
-
-productSchema.post('init', function(doc){
-    console.log('--AFTER Product init--');
-    // console.log({this});
-});
-
-productSchema.post('save', function(doc){
-    console.log('--AFTER Product save--');
-    // console.log({this});
-});
+// // Do we need to run any lifecycle hooks/middleware?
+// productSchema.post('findOne', function(document){
+//     console.log('--AFTER Product find one--');
+//     // console.log({document});
+//     // console.log({this});
+// });
+//
+// productSchema.post('init', function(doc){
+//     console.log('--AFTER Product init--');
+//     // console.log({this});
+// });
+//
+// productSchema.post('save', function(doc){
+//     console.log('--AFTER Product save--');
+//     // console.log({this});
+// });
 
 
 module.exports = mongoose.model('products', productSchema);
