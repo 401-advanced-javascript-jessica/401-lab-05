@@ -31,7 +31,18 @@ describe('Categories Model (Singular)', () => {
   });
 
   it('can get() all categories', () => {
-
+      let newCategory = {name: 'Shorts', description: 'Things you wear on bottom'};
+      let newCategory2 = {name: 'Shirts', description: 'Things you wear on top'};
+      return categories.create(newCategory)
+          .then( () => {
+              return categories.create(newCategory2)
+          })
+          .then((savedCategory) => {
+              return categories.get()
+          })
+          .then((foundCategory) => {
+              expect(foundCategory.count).toEqual(4);
+          })
   });
 
   it('can update() a category', () => {
@@ -59,7 +70,6 @@ describe('Categories Model (Singular)', () => {
                       return categories.get(deletedCategory._id)
                     })
                     .then((categories) => {
-                        console.log(categories);
                         expect(categories).toEqual(null);
                     })
               });

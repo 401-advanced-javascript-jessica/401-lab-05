@@ -11,17 +11,16 @@ class Categories {
   get(_id) {
     // Call the appropriate mongoose method to get
       if(_id) {
+          // If 1, return it as a plain object
         return mongooseModel.findOne({_id});
       } else {
-          return mongooseModel.find({});
+          // If 2, return it as an object like this:
+          return  mongooseModel.find({})
+          .then((foundItems)=>{
+              // { count: ##, results: [{}, {}] }
+             return { count: foundItems.length, results: foundItems}
+          })
       }
-      // //if there's no id, return an immediately rejected promise in the form of an error
-      // return Promise.reject(new Error('--Invalid Id--'));
-
-    // one or more records
-    // If 1, return it as a plain object
-    // If 2, return it as an object like this:
-    // { count: ##, results: [{}, {}] }
   }
 
   create(record) {

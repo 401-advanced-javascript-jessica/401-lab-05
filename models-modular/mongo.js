@@ -17,7 +17,11 @@ class Model {
    * @returns {count:#,results:[{*}]} | {*}
    */
   get(_id) {
-
+    if(_id) {
+      return mongooseModel.findOne({_id});
+    } else {
+      return mongooseModel.find({});
+    }
   }
 
   /**
