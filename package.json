@@ -6,7 +6,9 @@
   "scripts": {
     "test": "jest --verbose",
     "test-watch": "jest --watchAll --verbose",
-    "startDB": "mkdir -p ./.db && mongod --dbpath=./.db"
+    "lint": "eslint '**/*.js'",
+    "startDB": "mkdir -p ./.db && mongod --dbpath=./.db",
+    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json"
   },
   "jest": {
     "testEnvironment": "node"
@@ -15,6 +17,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "eslint": "^6.2.0",
     "jest": "^24.8.0",
     "jsdocs": "^1.0.0",
     "mongodb-memory-server": "^5.2.0",

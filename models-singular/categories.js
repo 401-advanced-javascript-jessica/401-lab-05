@@ -10,24 +10,24 @@ class Categories {
 
   get(_id) {
     // Call the appropriate mongoose method to get
-      if(_id) {
-          // If 1, return it as a plain object
-        return mongooseModel.findOne({_id});
-      } else {
-          // If 2, return it as an object like this:
-          return  mongooseModel.find({})
-          .then((foundItems)=>{
-              // { count: ##, results: [{}, {}] }
-             return { count: foundItems.length, results: foundItems}
-          })
-      }
+    if(_id) {
+      // If 1, return it as a plain object
+      return mongooseModel.findOne({_id});
+    } else {
+      // If 2, return it as an object like this:
+      return  mongooseModel.find({})
+        .then((foundItems)=>{
+          // { count: ##, results: [{}, {}] }
+          return { count: foundItems.length, results: foundItems};
+        });
+    }
   }
 
   create(record) {
     // Call the appropriate mongoose method to create a new record
     const newRecord = new mongooseModel(record);
     //returns a promise that resolves into a new player
-     return newRecord.save();
+    return newRecord.save();
 
   }
 
