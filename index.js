@@ -21,10 +21,10 @@ const doDataStuff = async () => {
     };
 
     let newCategory = await categories.create(sampleCategory);
-    console.log('Category Created', newCategory);
+    //console.log('Category Created', newCategory);
 
     let oneCategory = await categories.get('5d5a1c39fe3d6c8e8042f265');
-    console.log('One Category', oneCategory);
+   // console.log('One Category', oneCategory);
 
     // Disconnect
     mongoose.disconnect();

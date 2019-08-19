@@ -3,7 +3,7 @@ let products = new Products();
 
 const supergoose = require('../supergoose.js');
 
-describe('Products Model (Singular)', () => {
+describe('Products Model (Modular)', () => {
 
     let newProduct = {
         name: 'Red TShirt',

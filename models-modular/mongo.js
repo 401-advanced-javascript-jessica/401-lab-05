@@ -17,10 +17,17 @@ class Model {
    * @returns {count:#,results:[{*}]} | {*}
    */
   get(_id) {
+    // Call the appropriate mongoose method to get
     if(_id) {
-      return mongooseModel.findOne({_id});
+      // If 1, return it as a plain object
+      return this.schema.findOne({_id});
     } else {
-      return mongooseModel.find({});
+      // If 2, return it as an object like this:
+      return  this.schema.find({})
+          .then((foundItems) => {
+            // { count: ##, results: [{}, {}] }
+            return { count: foundItems.length, results: foundItems}
+          })
     }
   }
 
@@ -31,6 +38,8 @@ class Model {
    */
   create(record) {
 
+    const newRecord = this.schema(record);
+    return newRecord.save();
   }
 
   /**
@@ -40,7 +49,7 @@ class Model {
    * @returns {*}
    */
   update(_id, record) {
-
+    return this.schema.findByIdAndUpdate(_id, record, {new: true});
   }
 
   /**
@@ -49,7 +58,7 @@ class Model {
    * @returns {*}
    */
   delete(_id) {
-
+    return this.schema.findByIdAndDelete(_id);
   }
 
 }
