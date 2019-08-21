@@ -7,6 +7,7 @@
 ### Links and Resources
 * [submission PR](https://github.com/401-advanced-javascript-jessica/401-lab-05/pull/3)
 * [travis](https://www.travis-ci.com/401-advanced-javascript-jessica/401-lab-05)
+* [jsdoc](http://localhost:3000/docs/)
 
 ###### `foo(thing) -> string`
 Usage Notes or examples
@@ -23,5 +24,8 @@ Usage Notes or examples
 #### Tests
 * Unit Tests: `npm test`
 * Lint Tests: `npm run lint`
+
+#### UML
+![UML](./UML.jpg)
 
 
